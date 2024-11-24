@@ -1,0 +1,158 @@
+﻿@page "/"
+@inject ILoadingIndicatorService ApplicationLoadingIndicatorService
+
+<PageTitle>Home</PageTitle>
+
+<MudText Typo="Typo.h3" GutterBottom="true">Hello, world!</MudText>
+<MudText Class="mb-8">Welcome to your new app, powered by MudBlazor and the .NET 8 Template and Blazorise !</MudText>
+<Paragraph>
+<MudAlert Severity="Severity.Normal">
+    You can find documentation and examples on our website here:
+    <MudLink Href="https://mudblazor.com" Target="_blank" Typo="Typo.body2" Color="MudBlazor.Color.Primary">
+        <b>www.mudblazor.com</b>
+    </MudLink>
+</MudAlert>
+</Paragraph>
+<Paragraph Background="Blazorise.Background.Light" TextAlignment="TextAlignment.Center">
+<Button Clicked="ShowApplicationIndicator" Color="Blazorise.Color.Info">Blazorise Application loading indicator</Button>
+</Paragraph>
+<Paragraph>
+<Row>
+    <Column ColumnSize=Blazorise.ColumnSize.Is12.OnMobile.Is4.OnTablet>
+        <MudCard>
+            <MudCardHeader Style="background-color: rgba(248, 245, 240, 0.25)">
+                MudBlazor button sizes
+            </MudCardHeader>
+            <MudCardContent>
+                <MudButton Variant="Variant.Outlined" Size="MudBlazor.Size.Small" Color="MudBlazor.Color.Primary">Small</MudButton>
+                <MudButton Variant="Variant.Outlined" Size="MudBlazor.Size.Medium" Color="MudBlazor.Color.Secondary">Medium</MudButton>
+                <MudButton Variant="Variant.Outlined" Size="MudBlazor.Size.Large" Color="MudBlazor.Color.Tertiary">Large</MudButton>
+            </MudCardContent>
+        </MudCard>
+    </Column>
+    <Column ColumnSize=Blazorise.ColumnSize.Is12.OnMobile.Is4.OnTablet>
+        <Card >
+            <CardHeader>
+                <CardTitle>Blazorise button sizes</CardTitle>
+            </CardHeader>
+            <CardBody>
+                <CardText>Add Button Size <Code>.ExtraSmall</Code>, <Code>.Small</Code>, <Code>.Medium</Code>, <Code>.Large</Code>, <Code>.ExtraLarge</Code> for additional sizes.</CardText>
+            </CardBody>
+            <CardBody>
+                <Button Color="Blazorise.Color.Primary" Size="Blazorise.Size.ExtraSmall" Outline>Extra small</Button>
+                <Button Color="Blazorise.Color.Secondary" Size="Blazorise.Size.Small" Outline>Small</Button>
+                <Button Color="Blazorise.Color.Info" Size="Blazorise.Size.Default" Outline>Default</Button>
+                <Button Color="Blazorise.Color.Success" Size="Blazorise.Size.Medium" Outline>Medium</Button>
+                <Button Color="Blazorise.Color.Warning" Size="Blazorise.Size.Large" Outline>Large</Button>
+                <Button Color="Blazorise.Color.Danger" Size="Blazorise.Size.ExtraLarge" Outline>Extra large</Button>
+            </CardBody>
+        </Card>
+    </Column>
+</Row>
+</Paragraph>
+<Row>
+    <Column ColumnSize="ColumnSize.Is6.OnDesktop.Is12.OnMobile">
+        <MudCard>
+            <MudCardHeader Style="background-color: rgba(248, 245, 240, 0.25)">
+                MudBlazor alerts
+            </MudCardHeader>
+        <MudAlert Severity="Severity.Normal">The reactor type is RBMK-1000</MudAlert>
+        <MudAlert Severity="Severity.Info" ShowCloseIcon="true">The reactor was fired up successfully</MudAlert>
+        <MudAlert Severity="Severity.Success">The reactor is running at optimum temperature</MudAlert>
+        <MudAlert Severity="Severity.Warning">The reactor temperature exceeds the optimal range</MudAlert>
+        <MudAlert Severity="Severity.Error" ShowCloseIcon="true">Meltdown is imminent</MudAlert>
+        </MudCard>
+    </Column>
+    <Column ColumnSize="ColumnSize.Is6.OnDesktop.Is12.OnMobile">
+        <Card >
+            <CardHeader>
+                <CardTitle>Blazorise Dismisable Alert</CardTitle>
+            </CardHeader>
+            <CardBody>
+                <CardText>
+                    Add a dismiss button and the which adds extra padding to the right of the alert and positions the <code>CloseButton</code>.
+                </CardText>
+            </CardBody>
+            <CardBody>
+                <Alert Color="Blazorise.Color.Success" @bind-Visible="@dismisableAlert1" Dismisable>
+                    <AlertDescription>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </AlertDescription>
+                    <AlertMessage>
+                        Alert Link.
+                    </AlertMessage>
+                    <CloseButton />
+                </Alert>
+                <Alert Color="Blazorise.Color.Info" @bind-Visible="@dismisableAlert2" Dismisable>
+                    <AlertDescription>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </AlertDescription>
+                    <AlertMessage>
+                        Alert Link.
+                    </AlertMessage>
+                    <CloseButton />
+                </Alert>
+                <Alert Color="Blazorise.Color.Warning" @bind-Visible="@dismisableAlert3" Dismisable>
+                    <AlertDescription>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </AlertDescription>
+                    <AlertMessage>
+                        Alert Link.
+                    </AlertMessage>
+                    <CloseButton />
+                </Alert>
+                <Alert Color="Blazorise.Color.Danger" @bind-Visible="@dismisableAlert4" Dismisable>
+                    <AlertDescription>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </AlertDescription>
+                    <AlertMessage>Alert Link.</AlertMessage>
+                    <CloseButton />
+                </Alert>
+                <Alert Color="Blazorise.Color.Light" @bind-Visible="@dismisableAlert5" Dismisable>
+                    <AlertDescription>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </AlertDescription>
+                    <AlertMessage>Alert Link.</AlertMessage>
+                    <CloseButton />
+                </Alert>
+                <Alert Color="Blazorise.Color.Dark" @bind-Visible="@dismisableAlert6" Dismisable>
+                    <AlertDescription>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </AlertDescription>
+                    <AlertMessage>Alert Link.</AlertMessage>
+                    <CloseButton />
+                </Alert>
+                <Alert Color="Blazorise.Color.Info" @bind-Visible="@dismisableAlert7" Dismisable>
+                    <Heading Size="HeadingSize.Is4" TextColor="TextColor.Success">
+                        Big one!
+                        <CloseButton />
+                    </Heading>
+                    <Paragraph>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.
+                    </Paragraph>
+                    <Paragraph>
+                        <Button Color="Blazorise.Color.Info">Wanna do this</Button>
+                        <Button Color="Blazorise.Color.Light">Or do this</Button>
+                    </Paragraph>
+                </Alert>
+            </CardBody>
+        </Card>
+    </Column>
+</Row>
+
+@code {
+    bool dismisableAlert1 = true;
+    bool dismisableAlert2 = true;
+    bool dismisableAlert3 = true;
+    bool dismisableAlert4 = true;
+    bool dismisableAlert5 = true;
+    bool dismisableAlert6 = true;
+    bool dismisableAlert7 = true;
+
+    async Task ShowApplicationIndicator()
+    {
+        await ApplicationLoadingIndicatorService.Show();
+        await Task.Delay(3000);
+        await ApplicationLoadingIndicatorService.Hide();
+    }
+}
